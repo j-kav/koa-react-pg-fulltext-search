@@ -1,0 +1,34 @@
+{
+  "name": "koa-react-pg-fulltext-search",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently — kill-others \"npm run frontend\" \"npm run backend\"",
+    "backend": "nodemon server-app",
+    "frontend": "cd client-app && npm build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/j-kav/koa-react-pg-fulltext-search.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/j-kav/koa-react-pg-fulltext-search/issues"
+  },
+  "homepage": "https://github.com/j-kav/koa-react-pg-fulltext-search#readme",
+  "dependencies": {
+    "create-react-app": "^3.4.1",
+    "dotenv": "^8.2.0",
+    "http-status": "^1.4.2",
+    "koa": "^2.13.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-cors": "0.0.16",
+    "koa-logger": "^3.2.1",
+    "koa-mount": "^4.0.0",
+    "koa-router": "^9.1.0",
+    "koa-static": "^5.0.0"
+  }
+}

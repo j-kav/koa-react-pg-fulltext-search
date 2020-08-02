@@ -1,1 +1,1 @@
-# koa-react-postgresql
+# koa-react-postgresql-fulltext-search
