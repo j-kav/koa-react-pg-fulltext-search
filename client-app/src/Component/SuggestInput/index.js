@@ -38,8 +38,7 @@ export class SuggestInput extends Component {
         }
 
         this.state.pendingSuggestion = query;
-        const result = await axios.get(`http://localhost:5075/suggest?searchInput=${encodeURIComponent(query)}`);
-        // const result = await axios.get(`${window.location.origin}/suggest?searchInput=${encodeURIComponent(query)}`);
+        const result = await axios.get(`${window.location.origin}/suggest?searchInput=${encodeURIComponent(query)}`);
 
         const status = result.status;
         if (status === 200 && this.state.pendingSuggestion !== null && this.state.pendingSuggestion === query) {
