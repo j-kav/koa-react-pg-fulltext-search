@@ -6,7 +6,6 @@
   "scripts": {
     "start": "run-s database-update frontend-install frontend-build manage-backend",
     "database-update": "node ./server-app/data-access-layer/seed-data",
-    "start-server": "concurrently — kill-others \"npm run frontend\" \"npm run backend\"",
     "manage-backend": "nodemon server-app",
     "frontend-install": "cd client-app && yarn install",
     "frontend-build": "cd client-app && yarn build"
