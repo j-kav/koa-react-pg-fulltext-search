@@ -7,7 +7,7 @@ const serve = require("koa-static")
 
 const index = new Koa()
 
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 5000
 
 index.use(BodyParser())
 index.use(Logger())
