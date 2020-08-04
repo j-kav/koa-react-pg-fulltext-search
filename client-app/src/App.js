@@ -1,15 +1,14 @@
 import React, {Component} from 'react';
-import './App.css';
 
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import CityList from './Component/CityList/index';
+import Home from './Component/Home/index';
 
 class App extends Component {
     render() {
         return (
             <Router>
-                <Route path="/" exact component={CityList}/>
+                <Route path="/" exact component={Home}/>
             </Router>
         );
     }
