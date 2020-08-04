@@ -10,15 +10,13 @@ const { IS_HEROKU_ENVIRONMENT } = require('../config')
 const loadSqlFile = (filePath) => readFile(path.join(__dirname, './' + filePath), 'utf8')
 
 async function seed() {
-    console.log('Creating schema...')
-    const query = await loadSqlFile('schema.sql')
-    await pool.query(query)
-
     if (IS_HEROKU_ENVIRONMENT) {
-        // console.log('Seeding cities will be skipped during Heroku restrictions...')
-        const citiesInsertions = await loadSqlFile('cities.sql')
-        await pool.query(citiesInsertions)
+        console.log('Seeding data will be skipped during Heroku restrictions...')
     } else {
+        console.log('Creating schema...')
+        const query = await loadSqlFile('schema.sql')
+        await pool.query(query)
+
         console.log('Seeding cities...')
         const citiesCsvFile = `'${path.join(__dirname, '../data-access-layer/seed-data/cities.csv')}'`
         await pool.query(`
