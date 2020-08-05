@@ -1,8 +1,9 @@
 # koa-react-postgresql-fulltext-search
 
 #TODO:
-##Frontend:
+
+## Frontend:
 - rewrite react using hooks/ReactQuery
-##Backend:
+## Backend:
 - cache requests 
 - fuzzy search
