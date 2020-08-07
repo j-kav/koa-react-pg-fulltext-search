@@ -5,9 +5,9 @@ const Logger = require("koa-logger")
 const cors = require('koa-cors')
 const serve = require("koa-static")
 
-const index = new Koa()
+const { PORT } = require("./config")
 
-const PORT = process.env.PORT || 5000
+const index = new Koa()
 
 index.use(BodyParser())
 index.use(Logger())

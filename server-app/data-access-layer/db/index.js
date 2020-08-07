@@ -14,7 +14,7 @@ exports.suggestCities = async function (searchInput) {
             with auxiliaryStatements as (
                 select name,
                        to_tsvector('simple', lower(unaccent(name))) as tsvector,
-                       f_concat_suggest_query('${searchInput}') as input
+                       f_concat_suggest_query($1) as input
                 from cities
             )
             SELECT name, ts_rank_cd(tsvector, query) as rank
@@ -23,7 +23,7 @@ exports.suggestCities = async function (searchInput) {
                or lower(unaccent(name)) ilike '%' || input || '%'
             order by rank desc
             limit ${SUGGEST_RESULT_LIMIT};
-        `)
+        `, [searchInput])
 
     if (result.rowCount > 0) {
         return result.rows.map(r => r.name);
